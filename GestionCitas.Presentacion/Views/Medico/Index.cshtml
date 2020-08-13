@@ -1,0 +1,216 @@
+﻿@{
+    ViewBag.Title = "Index";
+    ViewBag.Head = "Medicos";
+    ViewBag.SubTitle = "Listado";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles {
+    <style>
+        .tablaListado {
+            width: 100%;
+            /*border-collapse: separate;
+            border-spacing: 6px;*/
+        }
+
+            .tablaListado tr td:first-child {
+                /*border-left: 1px solid #c0c0c0 !important;*/
+            }
+
+            .tablaListado thead td {
+                background-color: #e9e9e9;
+                border-bottom: 0px !important;
+            }
+
+            .tablaListado td {
+                border: 1px solid #c0c0c0;
+                /*border-left: 0px;
+                border-top: 0px;*/
+                padding-left: 3px;
+            }
+
+        .btnLista {
+            background-color: transparent !important;
+            background-image: none !important;
+            border: 0px !important;
+            float: right !important;
+        }
+
+            .btnLista i {
+                float: left !important;
+            }
+
+        .divLista {
+            padding: 5px 10px 15px;
+            border: 1px solid #000000;
+            border-radius: 2px;
+        }
+
+        .control-generate {
+            border: 0px;
+            width: 100%;
+        }
+
+        .align-right {
+            text-align: right;
+        }
+    </style>
+}
+
+@section ScriptsCode
+{
+    <script type="text/javascript" src="@Url.Content("~/App_CodeJS/Medicos/MantenedorMedicos.js")"></script>
+}
+
+<div class="toolbar">
+    <button type="button" id="btnNuevo">
+        <i class="fa fa-fw fa-file-o"></i> Nuevo
+    </button>
+</div>
+
+<div id="grilla"></div>
+
+<div id="formularioRegistrar">
+    <table style="width:100%;border-collapse: separate; border-spacing: 6px;">
+        <tr>
+            <td class="align-right">
+                <label for="txtDni">DNI:</label>
+            </td>
+            <td>
+                <input type="hidden" id="txtIdentificador" value="-1" />
+                <input type="text" class="form-control" id="txtDni" maxlength="8" />
+            </td>
+            <td class="align-right">
+                <label for="txtNumColegiatura">N° Colegiatura: </label>
+            </td>
+            <td>
+                <input type="text" class="form-control" id="txtNumColegiatura" maxlength="5" />
+            </td>
+        </tr>
+        <tr>
+            <td class="align-right">
+                <label for="txtApellidos">Apellidos:</label>
+            </td>
+            <td>
+                <input type="text" class="form-control" id="txtApellidos" maxlength="25" />
+            </td>
+            <td class="align-right">
+                <label for="txtNombres">Nombres: </label>
+            </td>
+            <td>
+                <input type="text" class="form-control" id="txtNombres" maxlength="25" />
+            </td>
+        </tr>
+        <tr>
+            <td class="align-right">
+                <label for="txtFechaNacimiento">Fecha Nacimiento: </label>
+            </td>
+            <td>
+                <input type="text" class="form-control" id="txtFechaNacimiento" />
+            </td>
+            <td class="align-right">
+                <label>Sexo: </label>
+            </td>
+            <td>
+                <label style="font-weight:normal;"><input type="radio" name="rbSexo" id="rbSexoMasculino" value="M" checked />&nbsp;Masculino&nbsp;&nbsp;</label>
+                <label style="font-weight:normal;"><input type="radio" name="rbSexo" id="rbSexoFemenino" value="F" />&nbsp;Femenino&nbsp;</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="align-right">
+                <label for="txtCorreo">Correo: </label>
+            </td>
+            <td>
+                <input type="text" class="form-control" id="txtCorreo" maxlength="50" />
+            </td>
+            <td class="align-right">
+                <label for="txtTelefono">Telefono: </label>
+            </td>
+            <td>
+                <input type="text" class="form-control" id="txtTelefono" maxlength="25" />
+            </td>
+        </tr>
+        <tr>
+            <td class="align-right">
+                <label for="txtDireccion">Dirección: </label>
+            </td>
+            <td colspan="3">
+                <input type="text" class="form-control" id="txtDireccion" maxlength="100" />
+            </td>
+        </tr>
+    </table>
+    <div>
+        Especialidades
+        <a id="btnAgregarEspecialidad" class="btnLista">
+            <i class="fa fa-fw fa-plus"></i>Agregar
+        </a>
+        <hr style="margin-top:2px;margin-bottom:10px;" />
+        <table id="tblCabecera" class="tablaListado">
+            <thead>
+                <tr>
+                    <td style="width:10%" align="center">N°</td>
+                    <td style="width:80%">Especialidad</td>
+                    <td style="width:10%">Acciones</td>
+                </tr>
+            </thead>
+        </table>
+        <div id="div-body" style="overflow: auto; width: 100%;">
+            <table id="tblListadoEspecialidades" class="tablaListado">
+                <tbody id="tbListadoEspecialidades"></tbody>
+            </table>
+        </div>
+    </div>
+    <br />
+    <div class="toolbar" style="float: right;">
+        <button type="button" id="btnGuardar">
+            <i class="fa fa-fw fa-save"></i>Guardar
+        </button>
+        <button type="button" id="btnCancelar">
+            <i class="fa fa-fw fa-history"></i>Cancelar
+        </button>
+    </div>
+</div>
+
+<div id="formularioEliminarEspecialidad">
+    <table style="width: 100%; border-collapse: separate; border-spacing: 6px;">
+        <tr>
+            <td align="center">
+                <label>¿Está seguro de Eliminar la especialidad asignada al médico?</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="toolbar" style="float: right;">
+                    <button type="button" id="btnEliminarEspecialidad">
+                        <i class="fa fa-fw fa-trash"></i>Eliminar
+                    </button>
+                    <button type="button" id="btnCancelarEliminarEspecialidad">
+                        <i class="fa fa-fw fa-history"></i>Cancelar
+                    </button>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div id="formularioEliminarMedico">
+    <table style="width: 100%; border-collapse: separate; border-spacing: 6px;">
+        <tr>
+            <td align="center">
+                <label>¿Está seguro de Eliminar el médico seleccionado?</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="toolbar" style="float: right;">
+                    <button type="button" id="btnEliminarMedico">
+                        <i class="fa fa-fw fa-trash"></i>Eliminar
+                    </button>
+                    <button type="button" id="btnCancelarEliminarMedico">
+                        <i class="fa fa-fw fa-history"></i>Cancelar
+                    </button>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>

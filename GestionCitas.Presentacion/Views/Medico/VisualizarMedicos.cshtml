@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Ver Médicos";
+    ViewBag.Head = "Listado de Médicos";
+    ViewBag.SubTitle = "";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section ScriptsCode
+{
+    <script type="text/javascript" src="@Url.Content("~/App_CodeJS/Medicos/VisualizarMedicos.js")"></script>
+}
+
+<div id="grilla"></div>

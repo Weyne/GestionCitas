@@ -1,0 +1,11 @@
+D:\Desarrollo\GestionCitas\GestionCitas.Logica\bin\Debug\GestionCitas.Logica.dll
+D:\Desarrollo\GestionCitas\GestionCitas.Logica\bin\Debug\GestionCitas.Logica.pdb
+D:\Desarrollo\GestionCitas\GestionCitas.Logica\bin\Debug\Base.Comunes.dll
+D:\Desarrollo\GestionCitas\GestionCitas.Logica\bin\Debug\GestionCitas.Datos.dll
+D:\Desarrollo\GestionCitas\GestionCitas.Logica\bin\Debug\GestionCitas.Entidades.dll
+D:\Desarrollo\GestionCitas\GestionCitas.Logica\bin\Debug\Base.Comunes.pdb
+D:\Desarrollo\GestionCitas\GestionCitas.Logica\bin\Debug\GestionCitas.Datos.pdb
+D:\Desarrollo\GestionCitas\GestionCitas.Logica\bin\Debug\GestionCitas.Entidades.pdb
+D:\Desarrollo\GestionCitas\GestionCitas.Logica\obj\Debug\GestionCitas.Logica.csprojResolveAssemblyReference.cache
+D:\Desarrollo\GestionCitas\GestionCitas.Logica\obj\Debug\GestionCitas.Logica.dll
+D:\Desarrollo\GestionCitas\GestionCitas.Logica\obj\Debug\GestionCitas.Logica.pdb

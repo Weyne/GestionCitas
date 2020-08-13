@@ -1,0 +1,120 @@
+
+@font-face {
+    font-family: "OpenSansCondensedBold";
+    src: url("fonts/OpenSansCondensedBold.eot");
+    src: url("fonts/OpenSansCondensedBold.eot?#iefix")format("embedded-opentype"),
+    url("fonts/OpenSansCondensedBold.woff") format("woff"),
+    url("fonts/OpenSansCondensedBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+html, body {
+    font-family: 'OpenSansCondensedBold', "Segoe UI","Helvetica Neue",Helvetica,Verdana,"san-serif";
+    min-width: 1200px;
+}
+
+body {
+    background-color: #fff;
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3, h4 {
+    margin: 0;
+}
+
+h1 {
+    color: #1b4461;
+    font-size: 55px;
+    margin-top: 40px;
+    margin-left: 70px;
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #f05b41;
+    font-size: 35px;
+    margin-top: 35px;
+    margin-left: 70px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    color: #1b4461;
+    font-weight: lighter;
+    font-family: "Segoe UI", "Helvetica Neue", Helvetica, Verdana, "san-serif";
+    margin-bottom: 40px;
+    font-size: 30px;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+h3:after {
+    content: "";
+    height: 2px;
+    display: block;
+    position: absolute;
+    width: 70px;
+    bottom: 0;
+    background-color: #f05b41;
+}
+
+h4 {
+    color: #627789;
+    margin-top: 70px;    
+    margin-bottom: 20px;    
+    font-size: 28px;
+}
+
+h5 {
+    color: #627789;
+    margin-top: 0;   
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+a {
+    color: #f05b41;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 3px 10px; 
+    background-color: #fff;
+    display: inline-block;
+    font-family: "Segoe UI", "Helvetica Neue", Helvetica, Verdana, "san-serif";
+}
+
+a:hover {
+    color: #fff;
+    background-color: #f05b41;
+}
+
+.section {
+    background-color: #eef0f2;
+    padding: 30px 70px;
+}
+
+.subsection {
+    margin-bottom: 40px;
+}
+
+.demo {
+	display: inline-block;
+	width: 400px;
+	margin-bottom: 35px;
+}
+
+.notice {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 40px;
+    background-color: #f6e6a5;
+    width: 250px;
+    padding: 20px;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.08);
+    font-family: "Segoe UI", "Helvetica Neue", Helvetica, Verdana, "san-serif";
+    color: #6b6b6b;
+    font-size: 14px;
+}

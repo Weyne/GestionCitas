@@ -1,0 +1,7 @@
+D:\Desarrollo\GestionCitas\GestionCitas.Datos\bin\Debug\GestionCitas.Datos.dll
+D:\Desarrollo\GestionCitas\GestionCitas.Datos\bin\Debug\GestionCitas.Datos.pdb
+D:\Desarrollo\GestionCitas\GestionCitas.Datos\bin\Debug\GestionCitas.Entidades.dll
+D:\Desarrollo\GestionCitas\GestionCitas.Datos\bin\Debug\GestionCitas.Entidades.pdb
+D:\Desarrollo\GestionCitas\GestionCitas.Datos\obj\Debug\GestionCitas.Datos.csprojResolveAssemblyReference.cache
+D:\Desarrollo\GestionCitas\GestionCitas.Datos\obj\Debug\GestionCitas.Datos.dll
+D:\Desarrollo\GestionCitas\GestionCitas.Datos\obj\Debug\GestionCitas.Datos.pdb

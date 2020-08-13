@@ -1,0 +1,107 @@
+﻿@{
+    ViewBag.Title = "Index";
+    ViewBag.Head = "Pacientes";
+    ViewBag.SubTitle = "Listado";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section ScriptsCode
+{
+    <script type="text/javascript" src="@Url.Content("~/App_CodeJS/Pacientes/MantenedorPacientes.js")"></script>
+}
+
+<div class="toolbar">
+    <button type="button" id="btnNuevo">
+        <i class="fa fa-fw fa-file-o"></i> Nuevo
+    </button>
+</div>
+
+<div id="grilla"></div>
+
+<div id="formularioRegistrar">
+    <table style="width:100%;border-collapse: separate; border-spacing: 6px;">
+        <tr>
+            <td class="align-right">
+                <label for="txtApellidos">Apellidos:</label>
+            </td>
+            <td>
+                <input type="text" class="form-control" id="txtApellidos" maxlength="25" />
+            </td>
+            <td class="align-right">
+                <label for="txtNombres">Nombres: </label>
+            </td>
+            <td>
+                <input type="text" class="form-control" id="txtNombres" maxlength="25" />
+            </td>
+        </tr>
+        <tr>
+            <td class="align-right">
+                <label for="txtFechaNacimiento">Fecha Nacimiento: </label>
+            </td>
+            <td>
+                <input type="text" class="form-control" id="txtFechaNacimiento" />
+            </td>
+            <td class="align-right">
+                <label>Sexo: </label>
+            </td>
+            <td>
+                <label style="font-weight:normal;"><input type="radio" name="rbSexo" id="rbSexoMasculino" value="M" checked />&nbsp;Masculino&nbsp;&nbsp;</label>
+                <label style="font-weight:normal;"><input type="radio" name="rbSexo" id="rbSexoFemenino" value="F" />&nbsp;Femenino&nbsp;</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="align-right">
+                <label for="txtDni">DNI:</label>
+            </td>
+            <td>
+                <input type="hidden" id="txtIdentificador" value="-1" />
+                <input type="text" class="form-control" id="txtDni" maxlength="8" />
+            </td>
+            <td class="align-right">
+                <label for="txtTelefono">Telefono: </label>
+            </td>
+            <td>
+                <input type="text" class="form-control" id="txtTelefono" maxlength="25" />
+            </td>
+        </tr>
+        <tr>
+            <td class="align-right">
+                <label for="txtDireccion">Dirección: </label>
+            </td>
+            <td colspan="3">
+                <input type="text" class="form-control" id="txtDireccion" maxlength="100" />
+            </td>
+        </tr>
+    </table>
+    <br />
+    <div class="toolbar" style="float: right;">
+        <button type="button" id="btnGuardar">
+            <i class="fa fa-fw fa-save"></i>Guardar
+        </button>
+        <button type="button" id="btnCancelar">
+            <i class="fa fa-fw fa-history"></i>Cancelar
+        </button>
+    </div>
+</div>
+
+<div id="formularioEliminarPaciente">
+    <table style="width: 100%; border-collapse: separate; border-spacing: 6px;">
+        <tr>
+            <td align="center">
+                <label>¿Está seguro de Eliminar el paciente seleccionado?</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="toolbar" style="float: right;">
+                    <button type="button" id="btnEliminarPaciente">
+                        <i class="fa fa-fw fa-trash"></i>Eliminar
+                    </button>
+                    <button type="button" id="btnCancelarEliminarPaciente">
+                        <i class="fa fa-fw fa-history"></i>Cancelar
+                    </button>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>

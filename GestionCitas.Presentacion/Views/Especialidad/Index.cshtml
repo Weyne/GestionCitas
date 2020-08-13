@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "Index";
+    ViewBag.Head = "Especialidades";
+    ViewBag.SubTitle = "Listado";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles {
+}
+
+@section ScriptsCode
+{
+    <script type="text/javascript" src="@Url.Content("~/App_CodeJS/Especialidades/MantenedorEspecialidades.js")"></script>
+}
+
+<div class="toolbar">
+    <button type="button" id="btnNuevo">
+        <i class="fa fa-fw fa-file-o"></i> Nuevo
+    </button>
+</div>
+
+<div id="grilla"></div>
+
+<div id="formularioRegistrar">
+    <table style="width:100%;border-collapse: separate; border-spacing: 6px;">
+        <tr>
+            <td align="right">
+                <label for="txtNombre">Nombre:</label>
+            </td>
+            <td>
+                <input type="hidden" id="txtIdentificador" value="-1" />
+                <input type="text" id="txtNombre" class="form-control" tabindex="1" />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" align="right">
+                <label for="txtDescripcion">Descripción:</label>
+            </td>
+            <td>
+                <textarea id="txtDescripcion" class="form-control" rows="10" tabindex="2"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td><input type="checkbox" id="chkActivo" checked tabindex="3" /> <label for="chkActivo">Activo</label></td>
+        </tr>
+    </table>
+
+    <div class="toolbar" style="float: right;">
+        <button type="button" id="btnGuardar" tabindex="4">
+            <i class="fa fa-fw fa-save"></i>Guardar
+        </button>
+        <button type="button" id="btnCancelar" tabindex="5">
+            <i class="fa fa-fw fa-history"></i>Cancelar
+        </button>
+    </div>
+</div>
