@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CitaBLL.cs" />
     <Compile Include="EspecialidadBLL.cs" />
     <Compile Include="HorarioBLL.cs" />
     <Compile Include="MedicoBLL.cs" />

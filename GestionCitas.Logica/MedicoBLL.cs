@@ -235,6 +235,19 @@ namespace GestionCitas.Logica
                 throw e;
             }
         }
+
+        public List<MedicoDTO> ListarMedicosPorHorario(String opcionBusqueda, DateTime fechaAtencion, String filtro)
+        {
+            try
+            {
+                return MedicoDAL.Instancia.ListarMedicosPorHorario(opcionBusqueda, fechaAtencion, filtro);
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+        }
         #endregion
     }
 }

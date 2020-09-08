@@ -26,6 +26,11 @@ namespace GestionCitas.Presentacion
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
 
+            routes.MapRoute(
+                "Cita",
+                "Cita/{action}/{medicoId}/{fechaAtencion}",
+                new { controller = "Cita", action = "Horario", medicoId = UrlParameter.Optional, fechaAtencion = UrlParameter.Optional }
+            );
         }
     }
 }

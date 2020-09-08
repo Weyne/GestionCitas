@@ -10,5 +10,8 @@ namespace Base.Comunes
         public const String OK_DELETE = "El registro se elimino correctamente.";
         public const String OK_SAVE = "El registro se guardo correctamente.";
         public const String OK_UPDATE = "El registro se actualizo correctamente.";
+        public const Int16 ACTION_INSERT = 1;
+        public const Int16 ACTION_UPDATE = 2;
+        public const Int16 ACTION_DELETE = 3;
     }
 }

@@ -151,6 +151,37 @@ namespace GestionCitas.Datos
             catch (Exception e) { throw e; }
             finally { if (cmd != null) { cmd.Connection.Close(); } }
         }
+
+        public List<MedicoDTO> ListarMedicosPorHorario(String opcionBusqueda, DateTime fechaAtencion, String filtro)
+        {
+            SqlCommand cmd = null;
+            List<MedicoDTO> lista = new List<MedicoDTO>();
+            try
+            {
+                SqlConnection cn = Conexion.Instancia.conectar();
+                cmd = new SqlCommand("GC_BUSCAR_HORARIO", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@TIPOBUSQUEDA", opcionBusqueda);
+                cmd.Parameters.AddWithValue("@FECHAATENCION", fechaAtencion);
+                cmd.Parameters.AddWithValue("@FILTRO", filtro);
+                cn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    MedicoDTO objMedico = new MedicoDTO();
+                    objMedico.Id = Convert.ToInt16(dr["MEDICOID"]);
+                    objMedico.Nombres = dr["NOMBRES"].ToString();
+                    objMedico.Apellidos = dr["APELLIDOS"].ToString();
+                    lista.Add(objMedico);
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally { cmd.Connection.Close(); }
+            return lista;
+        }
         #endregion
     }
 }

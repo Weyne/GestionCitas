@@ -1,0 +1,137 @@
+﻿@{
+    ViewBag.Title = "Horario y citas del médico";
+    ViewBag.SubTitle = "";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles {
+    <style>
+        .tablaListado {
+            width: 100%;
+        }
+
+            .tablaListado tr td:first-child {
+                /*border-left: 1px solid #c0c0c0 !important;*/
+            }
+
+            .tablaListado thead td {
+                background-color: #e9e9e9;
+                border-bottom: 0px !important;
+            }
+
+            .tablaListado td {
+                border: 1px solid #c0c0c0;
+                padding-left: 3px;
+            }
+
+        .btnLista {
+            background-color: transparent !important;
+            background-image: none !important;
+            border: 0px !important;
+            float: right !important;
+        }
+
+            .btnLista i {
+                float: left !important;
+            }
+
+        .divLista {
+            padding: 5px 10px 15px;
+            border: 1px solid #000000;
+            border-radius: 2px;
+        }
+
+        .control-generate {
+            border: 0px;
+            width: 100%;
+        }
+
+        .align-right {
+            text-align: right;
+        }
+    </style>
+    <!-- fullCalendar -->
+    <link rel="stylesheet" href="~/AdminLte/bower_components/fullcalendar/dist/fullcalendar.min.css">
+    <link rel="stylesheet" href="~/AdminLte/bower_components/fullcalendar/dist/fullcalendar.print.min.css" media="print">
+}
+
+@section ScriptsCode{
+    <!-- fullCalendar -->
+    <script src="~/AdminLte/bower_components/moment/moment.js"></script>
+    <script src="~/AdminLte/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
+
+    <script type="text/javascript" src="@Url.Content("~/App_CodeJS/Cita/Horario.js")"></script>
+}
+<div class="toolbar">
+    <button type="button" id="btnNuevaCita">
+        <i class="fa fa-fw fa-file-o"></i> Registrar Cita
+    </button>
+</div>
+<input type="hidden" id="medicoId" value="@(ViewBag.medicoId ?? "-1")" />
+<input type="hidden" id="fechaAtencion" value="@(ViewBag.fechaAtencion ?? "-1")" />
+
+<div id="calendario"></div>
+
+<div id="formularioRegistrar">
+    <table style="width:100%;border-collapse: separate; border-spacing: 6px;">
+        <tr>
+            <td class="align-right">
+                <label for="txtDni">DNI:</label>
+            </td>
+            <td colspan="3">
+                <input type="hidden" id="txtIdentificador" value="-1" />
+                <input type="hidden" id="txtEstado" value="PENDIENTE" />
+                <input type="hidden" id="txtObservaciones" value="" />
+                <input type="hidden" id="txtPacienteId" value="-1" />
+                <input type="text" class="form-control" id="txtDni" maxlength="40" />
+            </td>
+        </tr>
+        <tr>
+            <td class="align-right">
+                <label for="txtApellidosNombres">Apellidos y Nombres:</label>
+            </td>
+            <td colspan="3">
+                <input type="text" class="form-control" id="txtApellidosNombres" disabled />
+            </td>
+        </tr>
+        <tr>
+            <td class="align-right">
+                <label for="txtMedico">Medico: </label>
+            </td>
+            <td colspan="3">
+                <input type="text" class="form-control" id="txtMedico" value="@ViewBag.Medico" disabled />
+            </td>
+        </tr>
+        <tr>
+            <td class="align-right">
+                <label for="txtFechaAtencion">Fecha Atención: </label>
+            </td>
+            <td colspan="3">
+                <input type="text" class="form-control" id="txtFechaAtencion" />
+            </td>
+        </tr>
+        <tr>
+            <td class="align-right">
+                <label for="txtHoraInicio">Hora Inicio: </label>
+            </td>
+            <td>
+                <input type="time" class="form-control" id="txtHoraInicio" />
+            </td>
+            <td class="align-right">
+                <label for="txtHoraFin">Hora Fin: </label>
+            </td>
+            <td>
+                <input type="time" class="form-control" id="txtHoraFin" />
+            </td>
+        </tr>
+    </table>
+    <br />
+    <div class="toolbar" style="float: right;">
+        <button type="button" id="btnGuardar">
+            <i class="fa fa-fw fa-save"></i>Guardar
+        </button>
+        <button type="button" id="btnCancelar">
+            <i class="fa fa-fw fa-history"></i>Cancelar
+        </button>
+    </div>
+</div>

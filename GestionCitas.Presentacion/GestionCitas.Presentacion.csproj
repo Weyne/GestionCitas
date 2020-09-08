@@ -159,6 +159,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CitaController.cs" />
     <Compile Include="Controllers\EspecialidadController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MedicoController.cs" />
@@ -6538,6 +6539,8 @@
     <Content Include="AdminLte\js\demo.js" />
     <Content Include="AdminLte\js\pages\dashboard.js" />
     <Content Include="AdminLte\js\pages\dashboard2.js" />
+    <Content Include="App_CodeJS\Cita\Horario.js" />
+    <Content Include="App_CodeJS\Cita\Index.js" />
     <Content Include="App_CodeJS\Especialidades\MantenedorEspecialidades.js" />
     <Content Include="App_CodeJS\Medicos\Horario.js" />
     <Content Include="App_CodeJS\Medicos\MantenedorMedicos.js" />
@@ -7134,6 +7137,8 @@
     <Content Include="Views\Medico\Index.cshtml" />
     <Content Include="Views\Medico\VisualizarMedicos.cshtml" />
     <Content Include="Views\Medico\Horario.cshtml" />
+    <Content Include="Views\Cita\Index.cshtml" />
+    <Content Include="Views\Cita\Horario.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
